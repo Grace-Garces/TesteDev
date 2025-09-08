@@ -1,9 +1,3 @@
-Com certeza. Uma boa documentação é fundamental para que os avaliadores possam testar seu projeto de forma rápida e eficiente.
-
-Abaixo está um exemplo completo de um arquivo `README.md` que você pode colocar na raiz do seu projeto no GitHub ou enviar junto com os arquivos compactados. Ele explica o que é o projeto, os pré-requisitos, e como executar tanto a API quanto o script SQL.
-
------
-
 # Desafio Desenvolvedor C\# - Senior | Globaltec
 
 Este repositório contém a solução para o desafio técnico para a vaga de Analista/Desenvolvedor, proposto pela Senior | [cite\_start]Globaltec[cite: 2, 4]. [cite\_start]O projeto está dividido em duas partes, conforme a especificação[cite: 6]:
