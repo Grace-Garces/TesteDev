@@ -1,17 +1,16 @@
 # Desafio Desenvolvedor C\# - Senior | Globaltec
 
-Este repositório contém a solução para o desafio técnico para a vaga de Analista/Desenvolvedor, proposto pela Senior | [cite\_start]Globaltec[cite: 2, 4]. [cite\_start]O projeto está dividido em duas partes, conforme a especificação[cite: 6]:
+Este repositório contém a solução para o desafio técnico para a vaga de Analista/Desenvolvedor, proposto pela Senior | Globaltec. O projeto está dividido em duas partes, conforme a especificação:
 
-1.  **API REST em C\#**: Uma aplicação web que expõe endpoints para um CRUD de Pessoas, com autenticação baseada em Token JWT. [cite\_start]Os dados são armazenados em memória para simplificar a execução[cite: 7].
-2.  [cite\_start]**Consulta SQL**: Um script SQL para SQL Server que cria e popula um banco de dados de teste e executa uma consulta para unificar informações de contas a pagar e contas pagas[cite: 23].
+1.  **API REST em C#**: Uma aplicação web que expõe endpoints para um CRUD de Pessoas, com autenticação baseada em Token JWT. Os dados são armazenados em memória para simplificar a execução.
+2.  **Consulta SQL**: Um script SQL para SQL Server que cria e popula um banco de dados de teste e executa uma consulta para unificar informações de contas a pagar e contas pagas.
 
 ## Pré-requisitos
 
 Para executar este projeto, você precisará ter o seguinte software instalado:
 
   * **.NET 8 SDK** (ou superior)
-  * **SQL Server** (qualquer edição, incluindo a Express ou Developer)
-  * **SQL Server Management Studio (SSMS)** ou outra ferramenta de sua preferência para executar o script SQL.
+  * **SQL Server** 
   * Um editor de código como **Visual Studio 2022** ou **Visual Studio Code**.
 
 ## Parte 1: API REST em C\#
