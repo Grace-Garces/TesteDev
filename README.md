@@ -87,7 +87,7 @@ O script SQL resolve o segundo desafio, que consiste em unificar dados financeir
 3.  Execute o script inteiro pressionando `F5` ou clicando em "Execute". O resultado final da consulta será exibido na aba de "Results".
 4.  Se necessário também está no repositorio a consulta de create e insert da tabela, para testes.
 
-### A Consulta Resolvida
+### A Consulta para criar tabela e dados de testes
 
 ```sql
 -- Consulta para testar query de resolução;
