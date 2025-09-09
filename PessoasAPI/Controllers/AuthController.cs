@@ -29,11 +29,9 @@ public class AuthController : ControllerBase
 
     private string GenerateJwtToken(string username)
     {
-        // Lê as configurações do appsettings.json
         var issuer = _configuration["Jwt:Issuer"];
         var audience = _configuration["Jwt:Audience"];
 
-        // CORREÇÃO: Usar Encoding.UTF8 para ser consistente com a validação no Program.cs
         var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
 
         var tokenDescriptor = new SecurityTokenDescriptor

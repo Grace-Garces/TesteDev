@@ -8,7 +8,6 @@ namespace PessoasAPI.Controllers
 
     using Models;
 
-    //using PessoasAPI.Models;
     using PessoasAPI.Repository.Interfaces;
 
     [ApiController]

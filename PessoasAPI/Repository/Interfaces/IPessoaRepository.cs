@@ -1,7 +1,6 @@
 ﻿namespace PessoasAPI.Repository.Interfaces
 {
     using PessoasAPI.Models;
-    using PessoasAPI.Models;
 
     public interface IPessoaRepository
     {
