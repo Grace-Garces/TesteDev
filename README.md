@@ -90,33 +90,55 @@ O script SQL resolve o segundo desafio, que consiste em unificar dados financeir
 ### A Consulta Resolvida
 
 ```sql
--- Consulta para unificar informações de contas a pagar e contas pagas
-SELECT
-    cap.Numero AS NumeroProcesso,
-    p.Nome AS NomeFornecedor,
-    cap.DataVencimento,
-    NULL AS DataPagamento,
-    (cap.Valor + cap.Acrescimo - cap.Desconto) AS ValorLiquido,
-    'A Pagar' AS Status
-FROM
-    ContasAPagar AS cap
-INNER JOIN
-    Pessoas AS p ON cap.CodigoFornecedor = p.Codigo
+-- Consulta para testar query de resolução;
 
-UNION ALL
+CREATE TABLE Pessoas (
+    Codigo BIGINT PRIMARY KEY IDENTITY(1,1),
+    Nome VARCHAR(110) NOT NULL,
+    CpfCnpj VARCHAR(14) UNIQUE NOT NULL
+);
+GO
 
-SELECT
-    cpg.Numero AS NumeroProcesso,
-    p.Nome AS NomeFornecedor,
-    cpg.DataVencimento,
-    cpg.DataPagamento,
-    (cpg.Valor + cpg.Acrescimo - cpg.Desconto) AS ValorLiquido,
-    'Paga' AS Status
-FROM
-    ContasPagas AS cpg
-INNER JOIN
-    Pessoas AS p ON cpg.CodigoFornecedor = p.Codigo
+CREATE TABLE ContasAPagar (
+    Numero BIGINT PRIMARY KEY,
+    CodigoFornecedor BIGINT NOT NULL,
+    DataVencimento DATE NOT NULL,
+    DataProrrogacao DATE,
+    Valor NUMERIC(18, 2) NOT NULL,
+    Acrescimo NUMERIC(18, 2) DEFAULT 0,
+    Desconto NUMERIC(18, 2) DEFAULT 0,
+    CONSTRAINT FK_ContasAPagar_Pessoas FOREIGN KEY (CodigoFornecedor) REFERENCES Pessoas(Codigo)
+);
+GO
 
-ORDER BY
-    NumeroProcesso;
+CREATE TABLE ContasPagas (
+    Numero BIGINT PRIMARY KEY,
+    CodigoFornecedor BIGINT NOT NULL,
+    DataVencimento DATE NOT NULL,
+    DataPagamento DATE NOT NULL,
+    Valor NUMERIC(18, 2) NOT NULL,
+    Acrescimo NUMERIC(18, 2) DEFAULT 0,
+    Desconto NUMERIC(18, 2) DEFAULT 0,
+    CONSTRAINT FK_ContasPagas_Pessoas FOREIGN KEY (CodigoFornecedor) REFERENCES Pessoas(Codigo)
+);
+GO
+
+--INSERÇÃO DE DADOS
+
+INSERT INTO Pessoas (Nome, CpfCnpj) VALUES
+('Globaltec S/A', '11222333000144'),
+('Fornecedor de Peças de TI Ltda', '55666777000188');
+GO
+
+INSERT INTO ContasAPagar (Numero, CodigoFornecedor, DataVencimento, Valor, Acrescimo, Desconto) VALUES
+(101, 1, '2025-09-15', 1200.50, 0, 0),
+(103, 2, '2025-09-20', 750.00, 25.50, 0),
+(105, 1, '2025-10-05', 3500.00, 0, 150.00);
+GO
+
+INSERT INTO ContasPagas (Numero, CodigoFornecedor, DataVencimento, DataPagamento, Valor, Acrescimo, Desconto) VALUES
+(102, 2, '2025-08-30', '2025-08-28', 500.00, 0, 50.00),
+(104, 1, '2025-09-01', '2025-09-05', 2100.00, 105.00, 0);
+GO
+
 ```
