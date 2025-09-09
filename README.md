@@ -31,6 +31,7 @@ A API foi construída com ASP.NET Core e segue os padrões REST.
 
     ```bash
     dotnet restore
+    dotnet build
     ```
 
 3.  **Executar a Aplicação:**
@@ -47,15 +48,15 @@ A API foi construída com ASP.NET Core e segue os padrões REST.
         dotnet run
         ```
 
-    A API estará em execução e acessível em `https://localhost:<porta>`, e a interface do Swagger será aberta automaticamente no seu navegador.
+    A API estará em execução e acessível em `https://localhost:7065`, e a interface do Swagger será aberta automaticamente no seu navegador.
 
 ### Como Testar a API (usando o Swagger)
 
-[cite\_start]Todos os endpoints de `Pessoas`, com exceção da rota de autenticação, exigem um token de autenticação para serem acessados[cite: 8].
+Todos os endpoints de `Pessoas`, com exceção da rota de autenticação, exigem um token de autenticação para serem acessados.
 
 **1. Obter o Token de Acesso:**
 
-  * [cite\_start]Na interface do Swagger, localize o endpoint `POST /api/Auth/login`[cite: 29].
+  * Na interface do Swagger, localize o endpoint `POST /api/Auth/login`.
   * Clique em "Try it out" e utilize as seguintes credenciais no corpo da requisição:
     ```json
     {
@@ -73,21 +74,18 @@ A API foi construída com ASP.NET Core e segue os padrões REST.
 
 **3. Testar os Endpoints de Pessoas:**
 
-  * [cite\_start]Agora você pode executar qualquer um dos endpoints do `PessoasController` [cite: 30, 31, 32, 33, 35, 36] (GET, POST, PUT, DELETE). O Swagger irá enviar automaticamente o token de autorização em cada requisição.
+  * Agora você pode executar qualquer um dos endpoints do `PessoasController` (GET, POST, PUT, DELETE). O Swagger irá enviar automaticamente o token de autorização em cada requisição.
 
 ## Parte 2: Consulta SQL
 
-[cite\_start]O script SQL resolve o segundo desafio, que consiste em unificar dados financeiros[cite: 37].
+O script SQL resolve o segundo desafio, que consiste em unificar dados financeiros.
 
 ### Execução do Script
 
 1.  **Abra o SQL Server Management Studio (SSMS)** e conecte-se à sua instância do SQL Server.
-2.  Abra o arquivo `consulta_desafio.sql` que está neste repositório.
-3.  O script está dividido em três partes:
-      * Criação das tabelas `Pessoas`, `ContasAPagar` e `ContasPagas`.
-      * Inserção de dados de exemplo para teste.
-      * A consulta final que resolve o desafio.
-4.  Execute o script inteiro pressionando `F5` ou clicando em "Execute". O resultado final da consulta será exibido na aba de "Results".
+2.  Abra o arquivo sql que está neste repositório.
+3.  Execute o script inteiro pressionando `F5` ou clicando em "Execute". O resultado final da consulta será exibido na aba de "Results".
+4.  Se necessário também está no repositorio a consuolta de create e insert da tabela
 
 ### A Consulta Resolvida
 
