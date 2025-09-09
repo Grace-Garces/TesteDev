@@ -85,7 +85,7 @@ O script SQL resolve o segundo desafio, que consiste em unificar dados financeir
 1.  **Abra o SQL Server Management Studio (SSMS)** e conecte-se à sua instância do SQL Server.
 2.  Abra o arquivo sql que está neste repositório.
 3.  Execute o script inteiro pressionando `F5` ou clicando em "Execute". O resultado final da consulta será exibido na aba de "Results".
-4.  Se necessário também está no repositorio a consuolta de create e insert da tabela
+4.  Se necessário também está no repositorio a consulta de create e insert da tabela, para testes.
 
 ### A Consulta Resolvida
 
